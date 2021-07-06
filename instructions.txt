@@ -1,0 +1,17 @@
+kubectl apply -f .\pods\whoami-pod.yaml
+
+kubectl get pods
+kubectl describe pod whoami
+kubectl logs whoami
+
+#explore the environment
+kubectl exec -it sleep -- hostname
+kubectl exec -it sleep -- whoami
+
+#print the IP address of the whoami Pod
+kubectl get pods -o wide
+
+#make a request to the HTTP server in the whoami pod from the sleep Pod
+kubectl exec sleep -- curl -s <whoami-pod-ip>
+
+--10:30
