@@ -1,3 +1,6 @@
+https://docker.events.cube365.net/dockercon-live/2021
+https://docker.events.cube365.net/dockercon-live/2021/content/Videos/zo9AAafDLCPRv2rom?mkt_tok=NzkwLVNTQi0zNzUAAAF99p17jrsVDzjMS60zCJyE6bRu3hlvCR1fHybV18nbwghMr3sKOBlYojclYDIMSAhZMM1UruDtinzieEGv-RiM-FkXDic3Ba0aaTaXbk8
+
 kubectl apply -f .\pods\whoami-pod.yaml
 
 kubectl get pods
@@ -14,4 +17,17 @@ kubectl get pods -o wide
 #make a request to the HTTP server in the whoami pod from the sleep Pod
 kubectl exec sleep -- curl -s <whoami-pod-ip>
 
---10:30
+kubectl delete pods whoami sleep
+kubectl apply -f .\pods\
+
+kubectl get pods -o wide --show-labels
+
+kubectl describe svc whoami
+
+kubectl exec sleep -- nslookup whoami
+kubectl exec sleep -- curl -s http://whoami
+
+kubectl get pods -l app=whoami -o wide
+kubectl get deployments
+
+--18:00
